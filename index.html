@@ -1,0 +1,257 @@
+
+<!doctype html>
+<html>
+<head>
+<title>TEASER</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description"
+			content="TEASER: Token Enhanced Spatial Modeling for Expressions Reconstruction">
+<link href="assets/bootstrap.min.css" rel="stylesheet" >
+<script src="assets/jquery-3.2.1.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+<link href="assets/style.css" rel="stylesheet">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="assets/global_site_tag.js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-129271073-1');
+</script>
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TEASER">
+<meta name="twitter:description"
+			content="TEASER: Token Enhanced Spatial Modeling for Expressions Reconstruction">
+<meta name="twitter:image"
+      content="figures/teaser.jpg">
+<style>
+.paperthumb {
+  float:left; width: 120px; margin: 3px 10px 7px 0;
+}
+.paperdesc {
+  clear: both;
+}
+:target {
+     background-color: yellow;
+}
+.pdemo {
+  overflow-x: auto; text-align: center;
+}
+.pdemo table {
+  display:inline-table;
+}
+.pdemo td {
+  padding: 5px;
+}
+.pdemo .btn.reveal {
+  width: 100%;
+}
+.pdemo .btn {
+  background: #999;
+  color: white;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.pdemo .stack {
+  position: relative;
+}
+.pdemo .btn.reveal[data-reveal^=i]:hover {
+  background: rgb(6, 221, 221);
+  color: black;
+}
+.pdemo .btn.reveal[data-reveal=a]:hover {
+  background: lightgreen;
+  color: black;
+}
+.pdemo .btn.reveal[data-reveal=f]:hover {
+  background: lightblue;
+  color: black;
+}
+.pdemo .overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.5s;
+}
+.pdemo .overlay.visible {
+  opacity: 1;
+}
+</style>
+
+</head>
+<body class="nd-docs">
+<div class="nd-pageheader">
+ <div class="container">
+ <p class="lead">
+ <nobr><font color="#ff80be">T</font><font color="#FF9933">E</font><font color="#FFCC00">A</font><font color="#33CC66">S</font><font color="#93AFCE">E</font><font color="#eecbff">R</font>: <font color="#ff80be">T</font>oken-<font color="#FF9933">E</font>n<font color="#FFCC00">A</font>anced <font color="#33CC66">S</font>pacial Modeling for <font color="#93AFCE">E</font>xpression <font color="#eecbff">R</font>econstruction</nobr>
+<address>
+  <nobr><a href="http://liuyunfei.net"
+  >Yunfei Liu</a><sup>1, *</sup>,</nobr>
+  <nobr>Lei Zhu<sup>2, *</sup>,</nobr>
+  <nobr><a href="https://scholar.google.com.hk/citations?user=Xf5_TfcAAAAJ&hl=zh-CN"
+  >Lijian Lin</a><sup>1</sup>,</nobr>
+  <nobr>Ye Zhu<sup>1</sup>,</nobr>
+  <nobr>Ailing Zhang<sup>2</sup>,</nobr>
+  <nobr><a href="https://yu-li.github.io/"
+  >Yu Li</a><sup>1</sup></nobr>
+ <br>
+ <nobr><sup>1</sup><a href="https://www.idea.edu.cn">International Digital Economy Academy (IDEA), Shenzhen, China</a>,&nbsp;&nbsp;</nobr>
+ <nobr><sup>2</sup><a href="https://www.pkusz.edu.cn/">Peking University Graduate School, Shenzhen, China</a>,&nbsp;&nbsp;</nobr>
+ <nobr><sup>*</sup>Equal contribution&nbsp;&nbsp;</nobr>
+</address>
+ </p>
+ </div>
+</div><!-- end nd-pageheader -->
+<div class="container">
+
+<div class="row">
+<div class="col text-center">
+<p>
+  <a href="https://openreview.net/pdf?id=pTeOOKnjGM" class="d-inline-block p-3 align-top"><img height="100" width="78" src="figures/paper-snap.png" style="border:1px solid" data-nothumb><br>ICLR 2025</a>
+  <a href="https://github.com/DreamtaleCore/TEASER" class="d-inline-block p-3 align-top"><img height="100" width="78" src="figures/code-snap.png" style="border:1px solid" data-nothumb><br>Code</a>
+</div>
+</div>
+
+<div class="row">
+<div class="col">
+
+<p style="text-align: center"><img src="./figures/iclr25-teaser.png" style="max-width:85%"></p>
+<!-- <p style="text-align: center"> -->
+  <!-- <video style="max-width:85%" playsinline autoplay loop preload muted> -->
+  <!-- <video style="max-width:85%" controls playsinline preload> -->
+    <!-- <source src="./figures/iclr25-teaser.gif" type="image/gif"> -->
+  <!-- </video> -->
+<!-- </p> -->
+<p style="text-align: center; margin-bottom: 50px;">
+    <b>TL;DR:</b> TEASER reconstructs precise 3D facial expression and generates high-fidelity face image through estimating hybrid parameters for 3D facial reconstruction.
+</p>
+
+
+
+<h2>Abstract</h2>
+<p style="text-align: left; margin-left: 50px; margin-right: 50px; background-color: #f0f0f0; padding: 20px; border-radius: 10px;">
+3D facial reconstruction from a single in-the-wild image is a crucial task in human-centered computer vision tasks. While existing methods can recover accurate facial shapes, there remains significant space for improvement in fine-grained expression capture. Current approaches struggle with irregular mouth shapes, exaggerated expressions, and asymmetrical facial movements. We present TEASER (Token EnhAnced Spatial modeling for Expressions Reconstruction), which addresses these challenges and enhances 3D facial geometry performance. TEASER tackles two main limitations of existing methods: insufficient photometric loss for self-reconstruction and inaccurate localization of subtle expressions. We introduce a multi-scale tokenizer to extract facial appearance information. Combined with a neural renderer, these tokens provide precise geometric guidance for expression reconstruction. Furthermore, TEASER incorporates a pose-dependent landmark loss to further improve geometric performance. Our approach not only significantly enhances expression reconstruction quality but also offers interpretable tokens suitable for various downstream applications, such as photorealistic facial video driving, expression transfer, and identity swapping. Quantitative and qualitative experimental results across multiple datasets demonstrate that TEASER achieves state-of-the-art performance in precise expression reconstruction.
+</p>
+
+
+<h2>Overview</h2>
+
+<p style="text-align: center"><img src="./figures/iclr25-overview.png"
+  style="max-width:85%"></p>
+<p style="text-align: center; margin-bottom: 50px;">
+    The framework of TEASER pipeline.
+</p>
+
+<p> In summary, the main contributions of this paper are as follows: 
+<ol>
+  <li>We propose TEASER, a novel
+    approach that achieves more accurate facial expression reconstruction by predicting a hybrid representation of faces from a single image.  </li>
+  <li>We design a multi-scale facial appearance tokenizer and introduce a token-guided neural renderer to generate high-fidelity facial images. The extracted token is interpretable and highly disentangled, enabling various downstream applications.</li>
+  <li>We develop a token cycle constraint for self-supervised training of the tokenizer. We introduce pose-dependent landmark loss and region loss to further enhance the quality of expression reconstruction and facial image reconstruction</li>
+  <li>TEASER achieves the state-of-the-art performance, including quantitative and qualitative results on multiple benchmark datasets. Rigorous experiments also demonstrate the efficiency of different components in TEASER. Furthermore, we showcase impressive results in various face editing and animation tasks.</li>
+</ol>  
+
+<style>
+.show-unit {
+  overflow-x: auto;
+}
+.show-unit img {
+  max-height: 80px;
+}
+.explain-unit {
+  text-align: center;
+  margin-bottom: 10px;
+}
+</style>
+
+
+<h2>Experimental Results</h2>
+
+<p style="text-align: center"><img src="./figures/3d_recon.png"
+    style="max-width:100%"></p>
+<p style="text-align: center; margin-bottom: 50px;">
+    Visual comparison of 3D face reconstruction with SOTA methods.
+</p>
+
+<p style="text-align: center">
+  <!-- <video style="max-width:85%" playsinline autoplay loop preload muted> -->
+  <video style="max-width:85%" controls playsinline preload>
+    <source src="./figures/cmp_on_lrs3.mp4" type="video/mp4">
+  </video>
+</p>
+<p style="text-align: center; margin-bottom: 50px;">
+    More results on LRS3 dataset.
+</p>
+
+<p style="text-align: center">
+  <!-- <video style="max-width:85%" playsinline autoplay loop preload muted> -->
+  <video style="max-width:85%" controls playsinline preload>
+    <source src="./figures/cmp_on_hdtf.mp4" type="video/mp4">
+  </video>
+</p>
+<p style="text-align: center; margin-bottom: 50px;">
+    More results on HDTF dataset.
+</p>
+
+<p style="text-align: center">
+  <!-- <video style="max-width:85%" playsinline autoplay loop preload muted> -->
+  <video style="max-width:65%" controls playsinline preload>
+    <source src="./figures/replace_token.mp4" type="video/mp4">
+  </video>
+</p>
+<p style="text-align: center; margin-bottom: 50px;">
+    Replace the token with a new one.
+</p>
+
+<p style="text-align: center">
+  <!-- <video style="max-width:85%" playsinline autoplay loop preload muted> -->
+  <video style="max-width:65%" controls playsinline preload>
+    <source src="./figures/replace_token_shape.mp4" type="video/mp4">
+  </video>
+</p>
+<p style="text-align: center; margin-bottom: 50px;">
+    Replace the token and shape with a new one.
+</p>
+
+<p style="text-align: center">
+  <!-- <video style="max-width:85%" playsinline autoplay loop preload muted> -->
+  <video style="max-width:85%" controls playsinline preload>
+    <source src="./figures/exp_driven.mp4" type="video/mp4">
+  </video>
+</p>
+<p style="text-align: center; margin-bottom: 50px;">
+    Expression driven face animation.
+</p>
+
+
+<h2>How to cite</h2>
+
+<p>
+<div class="card">
+<h3 class="card-header">Bibtex</h3>
+<div class="card-block">
+<pre class="card-text clickselect">
+
+@inproceedings{liu2025TEASER,
+  title={TEASER: Token Enhanced Spatial Modeling for Expressions Reconstruction},
+  author={Liu, Yunfei and Zhu, Lei and Lin, Lijian and Zhu, Ye and Zhang, Ailing and Li, Yu},
+  booktitle={ICLR},
+  year={2025}
+}
+</pre>
+</div>
+</div>
+</p>
+
+</div>
+</div>
+
+
+</div> <!-- container -->
+
+</body>
+</html>
